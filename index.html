@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agência Criativa Web | Design digital que dá resultado</title>
+  <meta name="description" content="A Agência Criativa Web une estratégia, design e código para criar sites, marcas e campanhas que convertem.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="cabecalho">
+    <div class="cabecalho__interno">
+      <a class="logo" href="#home" aria-label="Agência Criativa Web - início">
+        <svg class="logo__marca" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <rect width="40" height="40" rx="10" fill="#3B37E8"/>
+          <circle cx="15" cy="20" r="8" fill="#FFC93C"/>
+          <path d="M20 12a8 8 0 0 1 0 16a8 8 0 0 0 0-16z" fill="#FFFFFF" opacity=".92"/>
+        </svg>
+        <span class="logo__texto">Criativa<strong>Web</strong></span>
+      </a>
+
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="menu-botao__barras" aria-hidden="true"></span>
+        <span class="visualmente-oculto">Abrir menu</span>
+      </button>
+
+      <nav class="menu" id="menu-principal" aria-label="Navegação principal">
+        <ul class="menu__lista">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#sobre">Sobre nós</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a class="menu__destaque" href="#contato">Fale conosco</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="home" aria-labelledby="titulo-hero">
+      <div class="hero__interno">
+        <div class="hero__texto">
+          <p class="hero__chamada">Agência de design digital em São Paulo</p>
+          <h1 id="titulo-hero">Sua marca merece ser lembrada, não só vista.</h1>
+          <p class="hero__descricao">
+            Estratégia, design e desenvolvimento no mesmo time. Isso significa menos ruído,
+            prazos mais curtos e sites que realmente vendem.
+          </p>
+          <div class="hero__acoes">
+            <a class="botao botao--primario" href="#contato">Peça um orçamento</a>
+            <a class="botao botao--secundario" href="#servicos">Conheça os serviços</a>
+          </div>
+        </div>
+
+        <figure class="hero__figura">
+          <img
+            src="https://picsum.photos/seed/criativaweb-hero/800/700"
+            srcset="https://picsum.photos/seed/criativaweb-hero/480/420 480w,
+                    https://picsum.photos/seed/criativaweb-hero/800/700 800w,
+                    https://picsum.photos/seed/criativaweb-hero/1200/1050 1200w"
+            sizes="(min-width: 64em) 45vw, 90vw"
+            width="800" height="700"
+            alt="Equipe da agência revisando um projeto de design em uma mesa de trabalho"
+            fetchpriority="high">
+          <figcaption class="hero__selo">
+            <strong>+180</strong> projetos entregues
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="secao sobre" id="sobre" aria-labelledby="titulo-sobre">
+      <div class="container sobre__grade">
+        <figure class="sobre__figura">
+          <img
+            src="https://picsum.photos/seed/criativaweb-sobre/700/520"
+            srcset="https://picsum.photos/seed/criativaweb-sobre/400/300 400w,
+                    https://picsum.photos/seed/criativaweb-sobre/700/520 700w,
+                    https://picsum.photos/seed/criativaweb-sobre/1000/740 1000w"
+            sizes="(min-width: 64em) 40vw, 90vw"
+            width="700" height="520"
+            loading="lazy"
+            alt="Designers conversando durante uma reunião de criação">
+        </figure>
+
+        <div class="sobre__texto">
+          <h2 id="titulo-sobre">Somos um estúdio pequeno com um jeito grande de trabalhar</h2>
+          <p>
+            A Agência Criativa Web nasceu em 2016 com uma ideia simples: design bonito só
+            vale a pena quando resolve um problema real do cliente. Desde então, ajudamos
+            negócios de todos os tamanhos a construir presença digital com clareza e consistência.
+          </p>
+
+          <ul class="valores">
+            <li class="valores__item">
+              <h3>Clareza</h3>
+              <p>Explicamos cada decisão de design em linguagem simples.</p>
+            </li>
+            <li class="valores__item">
+              <h3>Parceria</h3>
+              <p>Você acompanha o projeto de perto, do briefing à entrega.</p>
+            </li>
+            <li class="valores__item">
+              <h3>Resultado</h3>
+              <p>Medimos o que importa: contatos, vendas e reconhecimento.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao servicos" id="servicos" aria-labelledby="titulo-servicos">
+      <div class="container">
+        <header class="secao__cabecalho">
+          <h2 id="titulo-servicos">O que fazemos por você</h2>
+          <p>Do primeiro rascunho ao site no ar, cuidamos de todas as etapas.</p>
+        </header>
+
+        <ul class="servicos__grade">
+          <li class="servico">
+            <h3>Identidade visual</h3>
+            <p>Logotipo, paleta, tipografia e manual de marca para você se apresentar sempre do mesmo jeito.</p>
+          </li>
+          <li class="servico">
+            <h3>Design de sites</h3>
+            <p>Páginas rápidas, acessíveis e pensadas para funcionar bem no celular, no tablet e no computador.</p>
+          </li>
+          <li class="servico">
+            <h3>Design de interfaces</h3>
+            <p>Aplicativos e sistemas com navegação fácil, protótipos testados e componentes reutilizáveis.</p>
+          </li>
+          <li class="servico">
+            <h3>Social media</h3>
+            <p>Peças e calendários de conteúdo para manter seu perfil ativo e com a cara da sua marca.</p>
+          </li>
+          <li class="servico">
+            <h3>Otimização para buscas</h3>
+            <p>Estrutura e conteúdo ajustados para que seus clientes encontrem você no Google.</p>
+          </li>
+          <li class="servico">
+            <h3>Campanhas digitais</h3>
+            <p>Anúncios e páginas de destino criados juntos, para cada real investido render mais.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="secao depoimentos" id="depoimentos" aria-labelledby="titulo-depoimentos">
+      <div class="container">
+        <header class="secao__cabecalho">
+          <h2 id="titulo-depoimentos">Quem trabalhou com a gente</h2>
+        </header>
+
+        <div class="depoimentos__lista">
+          <figure class="depoimento">
+            <blockquote>
+              <p>Refizeram nosso site em seis semanas e as solicitações de orçamento dobraram no mesmo trimestre.</p>
+            </blockquote>
+            <figcaption class="depoimento__autor">
+              <span class="avatar" aria-hidden="true">MS</span>
+              <span><strong>Marina Souza</strong><br>Diretora, Café Aroma</span>
+            </figcaption>
+          </figure>
+
+          <figure class="depoimento">
+            <blockquote>
+              <p>A equipe entendeu nosso negócio antes de desenhar qualquer tela. Isso fez toda a diferença.</p>
+            </blockquote>
+            <figcaption class="depoimento__autor">
+              <span class="avatar" aria-hidden="true">RL</span>
+              <span><strong>Rafael Lima</strong><br>Fundador, Lima Contabilidade</span>
+            </figcaption>
+          </figure>
+
+          <figure class="depoimento">
+            <blockquote>
+              <p>Nossa marca ficou coerente em todos os canais. Hoje os clientes nos reconhecem de longe.</p>
+            </blockquote>
+            <figcaption class="depoimento__autor">
+              <span class="avatar" aria-hidden="true">CP</span>
+              <span><strong>Camila Pereira</strong><br>Sócia, Estúdio Vida Ativa</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao contato" id="contato" aria-labelledby="titulo-contato">
+      <div class="container contato__grade">
+        <div class="contato__info">
+          <h2 id="titulo-contato">Vamos conversar sobre o seu projeto?</h2>
+          <p>Conte o que você precisa e respondemos em até um dia útil.</p>
+
+          <address class="contato__dados">
+            <p><strong>Endereço</strong><br>Rua das Ideias, 123 - Pinheiros<br>São Paulo - SP, 05400-000</p>
+            <p><strong>Telefone</strong><br><a href="tel:+551140028922">(11) 4002-8922</a></p>
+            <p><strong>E-mail</strong><br><a href="mailto:ola@criativaweb.example">ola@criativaweb.example</a></p>
+          </address>
+        </div>
+
+        <form class="formulario" id="formulario-contato" action="#" method="post" novalidate>
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" autocomplete="name" required placeholder="Como podemos te chamar?">
+          </div>
+
+          <div class="campo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" autocomplete="email" required placeholder="voce@exemplo.com">
+          </div>
+
+          <div class="campo">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Fale um pouco sobre o que você quer criar"></textarea>
+          </div>
+
+          <button class="botao botao--primario" type="submit">Enviar mensagem</button>
+          <p class="formulario__retorno" id="retorno-formulario" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape__interno">
+      <p>&copy; 2026 Agência Criativa Web. Projeto fictício para fins didáticos.</p>
+      <a href="#home">Voltar ao topo</a>
+    </div>
+  </footer>
+
+  <script>
+    const botaoMenu = document.querySelector('.menu-botao');
+    const menu = document.getElementById('menu-principal');
+
+    function alternarMenu(abrir) {
+      botaoMenu.setAttribute('aria-expanded', abrir);
+      menu.classList.toggle('menu--aberto', abrir);
+    }
+
+    botaoMenu.addEventListener('click', () => {
+      alternarMenu(botaoMenu.getAttribute('aria-expanded') !== 'true');
+    });
+
+    menu.querySelectorAll('a').forEach(link =>
+      link.addEventListener('click', () => alternarMenu(false))
+    );
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') alternarMenu(false);
+    });
+
+    const formulario = document.getElementById('formulario-contato');
+    const retorno = document.getElementById('retorno-formulario');
+
+    formulario.addEventListener('submit', (e) => {
+      e.preventDefault();
+      retorno.classList.remove('formulario__retorno--erro');
+
+      if (!formulario.checkValidity()) {
+        retorno.textContent = 'Preencha nome, um e-mail válido e a mensagem para enviar.';
+        retorno.classList.add('formulario__retorno--erro');
+        formulario.reportValidity();
+        return;
+      }
+
+      const nome = formulario.nome.value.trim().split(' ')[0];
+      retorno.textContent = 'Obrigado, ' + nome + '! Recebemos sua mensagem e responderemos em breve.';
+      formulario.reset();
+    });
+  </script>
+</body>
+</html>
