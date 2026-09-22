@@ -15,41 +15,44 @@
 
   <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
 
+  <!-- ============ CABEÇALHO ============ -->
   <header class="cabecalho">
-    <div class="cabecalho__interno">
+    <div class="cabecalho__container">
       <a class="logo" href="#home" aria-label="Agência Criativa Web - início">
-        <svg class="logo__marca" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <svg class="logo__icone" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
           <rect width="40" height="40" rx="10" fill="#3B37E8"/>
           <circle cx="15" cy="20" r="8" fill="#FFC93C"/>
           <path d="M20 12a8 8 0 0 1 0 16a8 8 0 0 0 0-16z" fill="#FFFFFF" opacity=".92"/>
         </svg>
-        <span class="logo__texto">Criativa<strong>Web</strong></span>
+        <span class="logo__texto">Criativa<strong class="logo__texto-destaque">Web</strong></span>
       </a>
 
-      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal">
-        <span class="menu-botao__barras" aria-hidden="true"></span>
+      <button class="alternador" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="alternador__barra" aria-hidden="true"></span>
         <span class="visualmente-oculto">Abrir menu</span>
       </button>
 
       <nav class="menu" id="menu-principal" aria-label="Navegação principal">
         <ul class="menu__lista">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#sobre">Sobre nós</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#depoimentos">Depoimentos</a></li>
-          <li><a class="menu__destaque" href="#contato">Fale conosco</a></li>
+          <li class="menu__item"><a class="menu__link" href="#home">Home</a></li>
+          <li class="menu__item"><a class="menu__link" href="#sobre">Sobre nós</a></li>
+          <li class="menu__item"><a class="menu__link" href="#servicos">Serviços</a></li>
+          <li class="menu__item"><a class="menu__link" href="#depoimentos">Depoimentos</a></li>
+          <li class="menu__item"><a class="menu__link menu__link--destaque" href="#contato">Fale conosco</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="conteudo">
+
+    <!-- ============ HOME ============ -->
     <section class="hero" id="home" aria-labelledby="titulo-hero">
-      <div class="hero__interno">
-        <div class="hero__texto">
-          <p class="hero__chamada">Agência de design digital em São Paulo</p>
-          <h1 id="titulo-hero">Sua marca merece ser lembrada, não só vista.</h1>
-          <p class="hero__descricao">
+      <div class="hero__container">
+        <div class="hero__coluna">
+          <p class="hero__eyebrow">Agência de design digital em São Paulo</p>
+          <h1 class="hero__titulo" id="titulo-hero">Sua marca merece ser lembrada, não só vista.</h1>
+          <p class="hero__texto">
             Estratégia, design e desenvolvimento no mesmo time. Isso significa menos ruído,
             prazos mais curtos e sites que realmente vendem.
           </p>
@@ -60,7 +63,7 @@
         </div>
 
         <figure class="hero__figura">
-          <img
+          <img class="hero__imagem"
             src="https://picsum.photos/seed/criativaweb-hero/800/700"
             srcset="https://picsum.photos/seed/criativaweb-hero/480/420 480w,
                     https://picsum.photos/seed/criativaweb-hero/800/700 800w,
@@ -70,16 +73,17 @@
             alt="Equipe da agência revisando um projeto de design em uma mesa de trabalho"
             fetchpriority="high">
           <figcaption class="hero__selo">
-            <strong>+180</strong> projetos entregues
+            <strong class="hero__selo-numero">+180</strong> projetos entregues
           </figcaption>
         </figure>
       </div>
     </section>
 
+    <!-- ============ SOBRE NÓS ============ -->
     <section class="secao sobre" id="sobre" aria-labelledby="titulo-sobre">
-      <div class="container sobre__grade">
+      <div class="container sobre__container">
         <figure class="sobre__figura">
-          <img
+          <img class="sobre__imagem"
             src="https://picsum.photos/seed/criativaweb-sobre/700/520"
             srcset="https://picsum.photos/seed/criativaweb-sobre/400/300 400w,
                     https://picsum.photos/seed/criativaweb-sobre/700/520 700w,
@@ -90,9 +94,9 @@
             alt="Designers conversando durante uma reunião de criação">
         </figure>
 
-        <div class="sobre__texto">
-          <h2 id="titulo-sobre">Somos um estúdio pequeno com um jeito grande de trabalhar</h2>
-          <p>
+        <div class="sobre__coluna">
+          <h2 class="sobre__titulo" id="titulo-sobre">Somos um estúdio pequeno com um jeito grande de trabalhar</h2>
+          <p class="sobre__texto">
             A Agência Criativa Web nasceu em 2016 com uma ideia simples: design bonito só
             vale a pena quando resolve um problema real do cliente. Desde então, ajudamos
             negócios de todos os tamanhos a construir presença digital com clareza e consistência.
@@ -100,147 +104,171 @@
 
           <ul class="valores">
             <li class="valores__item">
-              <h3>Clareza</h3>
-              <p>Explicamos cada decisão de design em linguagem simples.</p>
+              <h3 class="valores__titulo">Clareza</h3>
+              <p class="valores__texto">Explicamos cada decisão de design em linguagem simples.</p>
             </li>
             <li class="valores__item">
-              <h3>Parceria</h3>
-              <p>Você acompanha o projeto de perto, do briefing à entrega.</p>
+              <h3 class="valores__titulo">Parceria</h3>
+              <p class="valores__texto">Você acompanha o projeto de perto, do briefing à entrega.</p>
             </li>
             <li class="valores__item">
-              <h3>Resultado</h3>
-              <p>Medimos o que importa: contatos, vendas e reconhecimento.</p>
+              <h3 class="valores__titulo">Resultado</h3>
+              <p class="valores__texto">Medimos o que importa: contatos, vendas e reconhecimento.</p>
             </li>
           </ul>
         </div>
       </div>
     </section>
 
+    <!-- ============ SERVIÇOS ============ -->
     <section class="secao servicos" id="servicos" aria-labelledby="titulo-servicos">
       <div class="container">
-        <header class="secao__cabecalho">
-          <h2 id="titulo-servicos">O que fazemos por você</h2>
-          <p>Do primeiro rascunho ao site no ar, cuidamos de todas as etapas.</p>
+        <header class="secao-cabecalho">
+          <h2 class="secao-cabecalho__titulo" id="titulo-servicos">O que fazemos por você</h2>
+          <p class="secao-cabecalho__texto">Do primeiro rascunho ao site no ar, cuidamos de todas as etapas.</p>
         </header>
 
-        <ul class="servicos__grade">
-          <li class="servico">
-            <h3>Identidade visual</h3>
-            <p>Logotipo, paleta, tipografia e manual de marca para você se apresentar sempre do mesmo jeito.</p>
+        <ul class="servicos__lista">
+          <li class="servico servico--indigo">
+            <h3 class="servico__titulo">Identidade visual</h3>
+            <p class="servico__texto">Logotipo, paleta, tipografia e manual de marca para você se apresentar sempre do mesmo jeito.</p>
           </li>
-          <li class="servico">
-            <h3>Design de sites</h3>
-            <p>Páginas rápidas, acessíveis e pensadas para funcionar bem no celular, no tablet e no computador.</p>
+          <li class="servico servico--sol">
+            <h3 class="servico__titulo">Design de sites</h3>
+            <p class="servico__texto">Páginas rápidas, acessíveis e pensadas para funcionar bem no celular, no tablet e no computador.</p>
           </li>
-          <li class="servico">
-            <h3>Design de interfaces</h3>
-            <p>Aplicativos e sistemas com navegação fácil, protótipos testados e componentes reutilizáveis.</p>
+          <li class="servico servico--tinta">
+            <h3 class="servico__titulo">Design de interfaces</h3>
+            <p class="servico__texto">Aplicativos e sistemas com navegação fácil, protótipos testados e componentes reutilizáveis.</p>
           </li>
-          <li class="servico">
-            <h3>Social media</h3>
-            <p>Peças e calendários de conteúdo para manter seu perfil ativo e com a cara da sua marca.</p>
+          <li class="servico servico--indigo">
+            <h3 class="servico__titulo">Social media</h3>
+            <p class="servico__texto">Peças e calendários de conteúdo para manter seu perfil ativo e com a cara da sua marca.</p>
           </li>
-          <li class="servico">
-            <h3>Otimização para buscas</h3>
-            <p>Estrutura e conteúdo ajustados para que seus clientes encontrem você no Google.</p>
+          <li class="servico servico--sol">
+            <h3 class="servico__titulo">Otimização para buscas</h3>
+            <p class="servico__texto">Estrutura e conteúdo ajustados para que seus clientes encontrem você no Google.</p>
           </li>
-          <li class="servico">
-            <h3>Campanhas digitais</h3>
-            <p>Anúncios e páginas de destino criados juntos, para cada real investido render mais.</p>
+          <li class="servico servico--tinta">
+            <h3 class="servico__titulo">Campanhas digitais</h3>
+            <p class="servico__texto">Anúncios e páginas de destino criados juntos, para cada real investido render mais.</p>
           </li>
         </ul>
       </div>
     </section>
 
+    <!-- ============ DEPOIMENTOS ============ -->
     <section class="secao depoimentos" id="depoimentos" aria-labelledby="titulo-depoimentos">
       <div class="container">
-        <header class="secao__cabecalho">
-          <h2 id="titulo-depoimentos">Quem trabalhou com a gente</h2>
+        <header class="secao-cabecalho secao-cabecalho--claro">
+          <h2 class="secao-cabecalho__titulo" id="titulo-depoimentos">Quem trabalhou com a gente</h2>
         </header>
 
         <div class="depoimentos__lista">
           <figure class="depoimento">
-            <blockquote>
+            <blockquote class="depoimento__citacao">
               <p>Refizeram nosso site em seis semanas e as solicitações de orçamento dobraram no mesmo trimestre.</p>
             </blockquote>
             <figcaption class="depoimento__autor">
               <span class="avatar" aria-hidden="true">MS</span>
-              <span><strong>Marina Souza</strong><br>Diretora, Café Aroma</span>
+              <span class="depoimento__identificacao">
+                <strong class="depoimento__nome">Marina Souza</strong><br>
+                <span class="depoimento__cargo">Diretora, Café Aroma</span>
+              </span>
             </figcaption>
           </figure>
 
           <figure class="depoimento">
-            <blockquote>
+            <blockquote class="depoimento__citacao">
               <p>A equipe entendeu nosso negócio antes de desenhar qualquer tela. Isso fez toda a diferença.</p>
             </blockquote>
             <figcaption class="depoimento__autor">
               <span class="avatar" aria-hidden="true">RL</span>
-              <span><strong>Rafael Lima</strong><br>Fundador, Lima Contabilidade</span>
+              <span class="depoimento__identificacao">
+                <strong class="depoimento__nome">Rafael Lima</strong><br>
+                <span class="depoimento__cargo">Fundador, Lima Contabilidade</span>
+              </span>
             </figcaption>
           </figure>
 
           <figure class="depoimento">
-            <blockquote>
+            <blockquote class="depoimento__citacao">
               <p>Nossa marca ficou coerente em todos os canais. Hoje os clientes nos reconhecem de longe.</p>
             </blockquote>
             <figcaption class="depoimento__autor">
               <span class="avatar" aria-hidden="true">CP</span>
-              <span><strong>Camila Pereira</strong><br>Sócia, Estúdio Vida Ativa</span>
+              <span class="depoimento__identificacao">
+                <strong class="depoimento__nome">Camila Pereira</strong><br>
+                <span class="depoimento__cargo">Sócia, Estúdio Vida Ativa</span>
+              </span>
             </figcaption>
           </figure>
         </div>
       </div>
     </section>
 
+    <!-- ============ CONTATO ============ -->
     <section class="secao contato" id="contato" aria-labelledby="titulo-contato">
-      <div class="container contato__grade">
-        <div class="contato__info">
-          <h2 id="titulo-contato">Vamos conversar sobre o seu projeto?</h2>
-          <p>Conte o que você precisa e respondemos em até um dia útil.</p>
+      <div class="container contato__container">
+        <div class="contato__coluna">
+          <h2 class="contato__titulo" id="titulo-contato">Vamos conversar sobre o seu projeto?</h2>
+          <p class="contato__texto">Conte o que você precisa e respondemos em até um dia útil.</p>
 
           <address class="contato__dados">
-            <p><strong>Endereço</strong><br>Rua das Ideias, 123 - Pinheiros<br>São Paulo - SP, 05400-000</p>
-            <p><strong>Telefone</strong><br><a href="tel:+551140028922">(11) 4002-8922</a></p>
-            <p><strong>E-mail</strong><br><a href="mailto:ola@criativaweb.example">ola@criativaweb.example</a></p>
+            <p class="contato__dados-item">
+              <strong class="contato__dados-rotulo">Endereço</strong><br>
+              Rua das Ideias, 123 - Pinheiros<br>São Paulo - SP, 05400-000
+            </p>
+            <p class="contato__dados-item">
+              <strong class="contato__dados-rotulo">Telefone</strong><br>
+              <a class="contato__link" href="tel:+551140028922">(11) 4002-8922</a>
+            </p>
+            <p class="contato__dados-item">
+              <strong class="contato__dados-rotulo">E-mail</strong><br>
+              <a class="contato__link" href="mailto:ola@criativaweb.example">ola@criativaweb.example</a>
+            </p>
           </address>
         </div>
 
         <form class="formulario" id="formulario-contato" action="#" method="post" novalidate>
           <div class="campo">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" autocomplete="name" required placeholder="Como podemos te chamar?">
+            <label class="campo__rotulo" for="nome">Nome</label>
+            <input class="campo__input" type="text" id="nome" name="nome" autocomplete="name" required placeholder="Como podemos te chamar?">
           </div>
 
           <div class="campo">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" autocomplete="email" required placeholder="voce@exemplo.com">
+            <label class="campo__rotulo" for="email">E-mail</label>
+            <input class="campo__input" type="email" id="email" name="email" autocomplete="email" required placeholder="voce@exemplo.com">
           </div>
 
           <div class="campo">
-            <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Fale um pouco sobre o que você quer criar"></textarea>
+            <label class="campo__rotulo" for="mensagem">Mensagem</label>
+            <textarea class="campo__input campo__input--textarea" id="mensagem" name="mensagem" rows="5" required placeholder="Fale um pouco sobre o que você quer criar"></textarea>
           </div>
 
-          <button class="botao botao--primario" type="submit">Enviar mensagem</button>
-          <p class="formulario__retorno" id="retorno-formulario" role="status" aria-live="polite"></p>
+          <button class="botao botao--primario formulario__botao" type="submit">Enviar mensagem</button>
+          <p class="formulario__status" id="retorno-formulario" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
   </main>
 
+  <!-- ============ RODAPÉ ============ -->
   <footer class="rodape">
-    <div class="container rodape__interno">
-      <p>&copy; 2026 Agência Criativa Web. Projeto fictício para fins didáticos.</p>
-      <a href="#home">Voltar ao topo</a>
+    <div class="container rodape__container">
+      <p class="rodape__texto">&copy; 2026 Agência Criativa Web. Projeto fictício para fins didáticos.</p>
+      <a class="rodape__link" href="#home">Voltar ao topo</a>
     </div>
   </footer>
 
   <script>
-    const botaoMenu = document.querySelector('.menu-botao');
+    // Menu hambúrguer
+    const botaoMenu = document.querySelector('.alternador');
     const menu = document.getElementById('menu-principal');
 
     function alternarMenu(abrir) {
       botaoMenu.setAttribute('aria-expanded', abrir);
+      botaoMenu.classList.toggle('alternador--ativo', abrir);
       menu.classList.toggle('menu--aberto', abrir);
     }
 
@@ -248,23 +276,25 @@
       alternarMenu(botaoMenu.getAttribute('aria-expanded') !== 'true');
     });
 
-    menu.querySelectorAll('a').forEach(link =>
+    // Fecha o menu ao escolher um link ou apertar Esc
+    menu.querySelectorAll('.menu__link').forEach(link =>
       link.addEventListener('click', () => alternarMenu(false))
     );
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') alternarMenu(false);
     });
 
+    // Validação simples do formulário (sem envio real)
     const formulario = document.getElementById('formulario-contato');
     const retorno = document.getElementById('retorno-formulario');
 
     formulario.addEventListener('submit', (e) => {
       e.preventDefault();
-      retorno.classList.remove('formulario__retorno--erro');
+      retorno.classList.remove('formulario__status--erro');
 
       if (!formulario.checkValidity()) {
         retorno.textContent = 'Preencha nome, um e-mail válido e a mensagem para enviar.';
-        retorno.classList.add('formulario__retorno--erro');
+        retorno.classList.add('formulario__status--erro');
         formulario.reportValidity();
         return;
       }
