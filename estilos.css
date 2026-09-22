@@ -1,30 +1,11 @@
-/* =========================================================
-   AGÊNCIA CRIATIVA WEB — estilos.css
-   Refatorado com nomenclatura BEM (.bloco__elemento--modificador)
-
-   Sumário
-   1. Variáveis e reset
-   2. Tipografia geral
-   3. Utilitários de layout
-   4. Componentes  (botao, campo, avatar, logo, menu, alternador, secao-cabecalho)
-   5. Seções       (cabecalho, hero, sobre, valores, servicos, depoimentos, contato, rodape)
-   6. Media queries
-
-   Mobile first: o layout base é para telas pequenas; as media
-   queries no final ampliam o layout para tablets e desktops.
-   ========================================================= */
-
-/* =========================================================
-   1. VARIÁVEIS E RESET
-   ========================================================= */
 :root {
-  --tinta: #14133a;          /* textos e fundos escuros */
-  --indigo: #3b37e8;         /* cor principal */
+  --tinta: #14133a;          
+  --indigo: #3b37e8;        
   --indigo-escuro: #2622b8;
-  --sol: #ffc93c;            /* cor de destaque */
-  --fundo: #f6f7fc;          /* fundo geral */
+  --sol: #ffc93c;            
+  --fundo: #f6f7fc;          
   --branco: #ffffff;
-  --cinza: #5a5a78;          /* texto secundário */
+  --cinza: #5a5a78;          
   --linha: #dcdcf0;
 
   --fonte-titulo: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
@@ -44,7 +25,7 @@
 }
 
 html {
-  font-size: 100%;               /* 1rem = 16px, respeita a preferência do usuário */
+  font-size: 100%;               
   scroll-behavior: smooth;
   scroll-padding-top: var(--altura-cabecalho);
 }
@@ -82,13 +63,7 @@ a {
   * { transition: none !important; }
 }
 
-/* =========================================================
-   2. TIPOGRAFIA GERAL
-   Escala de títulos usada em toda a página. Como não são
-   parte de um bloco específico, ficam fora do padrão BEM,
-   mas concentrados aqui — nenhum outro seletor de tag estiliza
-   texto no restante do arquivo.
-   ========================================================= */
+
 h1, h2, h3 {
   font-family: var(--fonte-titulo);
   line-height: 1.1;
@@ -99,13 +74,9 @@ h1 { font-size: clamp(2.25rem, 6vw + 0.5rem, 4.5rem); font-weight: 800; }
 h2 { font-size: clamp(1.75rem, 3.5vw + 0.5rem, 2.75rem); font-weight: 700; }
 h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
 
-/* =========================================================
-   3. UTILITÁRIOS DE LAYOUT
-   Classes reutilizadas por várias seções para largura,
-   espaçamento e acessibilidade.
-   ========================================================= */
+
 .container {
-  width: min(100% - 2.5rem, 72rem);   /* largura máxima + margem lateral */
+  width: min(100% - 2.5rem, 72rem);   
   margin-inline: auto;
 }
 
@@ -135,12 +106,6 @@ h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
 }
 .pular-conteudo:focus { top: 1rem; }
 
-/* =========================================================
-   4. COMPONENTES
-   Blocos BEM pequenos e reutilizados em mais de uma seção.
-   ========================================================= */
-
-/* ---- Componente: .botao ---- */
 .botao {
   display: inline-block;
   padding: 0.85em 1.6em;
@@ -168,7 +133,6 @@ h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
   color: var(--tinta);
 }
 
-/* ---- Componente: .campo (grupo label + input do formulário) ---- */
 .campo {
   display: flex;
   flex-direction: column;
@@ -201,7 +165,6 @@ h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
   resize: vertical;
 }
 
-/* ---- Componente: .avatar (iniciais do cliente em Depoimentos) ---- */
 .avatar {
   flex: none;
   display: grid;
@@ -214,7 +177,6 @@ h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
   border-radius: 50%;
 }
 
-/* ---- Componente: .logo ---- */
 .logo {
   display: flex;
   align-items: center;
@@ -229,7 +191,6 @@ h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
 .logo__icone { width: 2.4rem; height: 2.4rem; }
 .logo__texto-destaque { font-weight: 800; color: var(--indigo); }
 
-/* ---- Componente: .alternador (botão hambúrguer) ---- */
 .alternador {
   display: flex;
   align-items: center;
@@ -266,7 +227,6 @@ h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
 .alternador--ativo .alternador__barra::before { transform: translateY(0.4rem) rotate(45deg); }
 .alternador--ativo .alternador__barra::after  { transform: translateY(-0.4rem) rotate(-45deg); }
 
-/* ---- Componente: .menu (navegação) ---- */
 .menu {
   position: absolute;
   top: 100%;
@@ -280,7 +240,7 @@ h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
 
 .menu__lista {
   display: flex;
-  flex-direction: column;              /* empilhado no celular */
+  flex-direction: column;             
   padding: 0.5rem 1.25rem 1.25rem;
 }
 
@@ -306,7 +266,6 @@ h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
 }
 .menu__link--destaque:hover { color: var(--tinta); background: #ffd766; }
 
-/* ---- Componente: .secao-cabecalho (título + texto de apoio, reutilizado em Serviços e Depoimentos) ---- */
 .secao-cabecalho {
   max-width: 40rem;
   margin-bottom: 2.5rem;
@@ -320,12 +279,6 @@ h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
   color: var(--branco);
 }
 
-/* =========================================================
-   5. SEÇÕES
-   Estilos específicos de cada bloco de conteúdo da página.
-   ========================================================= */
-
-/* ---- Seção: .cabecalho ---- */
 .cabecalho {
   position: sticky;
   top: 0;
@@ -338,14 +291,13 @@ h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
   width: min(100% - 2.5rem, 72rem);
   min-height: var(--altura-cabecalho);
   margin-inline: auto;
-  display: flex;                       /* Flexbox: logo à esquerda, menu à direita */
+  display: flex;                       
   align-items: center;
   justify-content: space-between;
 }
 
-/* ---- Seção: .hero (Home) ---- */
 .hero {
-  min-height: calc(100vh - var(--altura-cabecalho));   /* ocupa a altura da janela */
+  min-height: calc(100vh - var(--altura-cabecalho));   
   display: flex;
   align-items: center;
   padding-block: 3rem;
@@ -418,7 +370,6 @@ h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
   line-height: 1;
 }
 
-/* ---- Seção: .sobre ---- */
 .sobre { background: var(--branco); }
 
 .sobre__container {
@@ -437,7 +388,6 @@ h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
 .sobre__titulo { margin-bottom: 1rem; }
 .sobre__texto { color: var(--cinza); }
 
-/* ---- Bloco: .valores (lista de diferenciais dentro de Sobre) ---- */
 .valores {
   display: grid;
   gap: 1.25rem;
@@ -452,10 +402,9 @@ h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
   color: var(--cinza);
 }
 
-/* ---- Seção: .servicos (CSS Grid) ---- */
 .servicos__lista {
   display: grid;
-  grid-template-columns: 1fr;          /* 1 coluna no celular */
+  grid-template-columns: 1fr;         
   gap: 1.25rem;
 }
 
@@ -466,7 +415,6 @@ h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
   border-top: 0.3rem solid var(--indigo);
   border-radius: var(--raio);
 }
-/* Modificadores de cor explícitos no HTML, no lugar de :nth-child */
 .servico--indigo { border-top-color: var(--indigo); }
 .servico--sol     { border-top-color: var(--sol); }
 .servico--tinta   { border-top-color: var(--tinta); }
@@ -474,14 +422,13 @@ h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
 .servico__titulo { margin-bottom: 0.6rem; }
 .servico__texto  { font-size: 0.98rem; color: var(--cinza); }
 
-/* ---- Seção: .depoimentos ---- */
 .depoimentos {
   background: var(--tinta);
   color: var(--branco);
 }
 
 .depoimentos__lista {
-  display: flex;                       /* Flexbox: cards lado a lado quando há espaço */
+  display: flex;                       
   flex-direction: column;
   gap: 1.25rem;
 }
@@ -514,7 +461,6 @@ h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
 .depoimento__nome { color: var(--branco); }
 .depoimento__cargo { color: #cfcfe8; }
 
-/* ---- Seção: .contato ---- */
 .contato__container {
   display: grid;
   gap: 2.5rem;
@@ -531,7 +477,6 @@ h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
 }
 .contato__link { font-weight: 500; }
 
-/* ---- Bloco: .formulario (dentro de Contato) ---- */
 .formulario {
   display: grid;
   gap: 1.25rem;
@@ -552,7 +497,6 @@ h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
 }
 .formulario__status--erro { color: #c62828; }
 
-/* ---- Seção: .rodape ---- */
 .rodape {
   padding-block: 1.75rem;
   font-size: 0.9rem;
@@ -568,18 +512,12 @@ h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
 }
 .rodape__link { color: var(--sol); }
 
-/* =========================================================
-   6. MEDIA QUERIES
-   ========================================================= */
-
-/* Celulares pequenos */
 @media (max-width: 30em) {           /* até 480px */
   body { font-size: 1rem; }
   .hero__acoes .botao { flex: 1 1 100%; }
   .hero__selo { left: 0.5rem; }
 }
 
-/* Tablets (a partir de 768px) */
 @media (min-width: 48em) {
   .servicos__lista { grid-template-columns: repeat(2, 1fr); }
 
@@ -589,7 +527,6 @@ h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
   .depoimento { flex-basis: 45%; }
 }
 
-/* Desktop: menu horizontal e layouts em duas colunas (a partir de 1024px) */
 @media (min-width: 64em) {
   .alternador { display: none; }
 
@@ -602,7 +539,7 @@ h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
   }
 
   .menu__lista {
-    flex-direction: row;               /* menu em linha */
+    flex-direction: row;               
     align-items: center;
     gap: 2rem;
     padding: 0;
@@ -626,7 +563,6 @@ h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
   .contato__container { grid-template-columns: 1fr 1.2fr; gap: 4.5rem; }
 }
 
-/* Telas muito grandes */
 @media (min-width: 90em) {
-  html { font-size: 112.5%; }          /* 18px: tudo em rem escala junto */
+  html { font-size: 112.5%; }          
 }
