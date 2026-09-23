@@ -1,0 +1,33 @@
+@use "variaveis" as v;
+
+@mixin breakpoint($ponto) {
+  @media (min-width: $ponto) {
+    @content;
+  }
+}
+
+@mixin flex($direcao: row, $alinhar: center, $justificar: flex-start, $espaco: 0) {
+  display: flex;
+  flex-direction: $direcao;
+  align-items: $alinhar;
+  justify-content: $justificar;
+  gap: $espaco;
+}
+
+@mixin espacamento-secao {
+  padding-block: v.$spacing-secao;
+}
+
+@mixin botao($fundo, $texto: v.$color-branco, $borda: transparent) {
+  display: inline-block;
+  padding: 0.85em 1.6em;
+  font: 700 1rem/1 v.$font-texto;
+  text-align: center;
+  text-decoration: none;
+  color: $texto;
+  background: $fundo;
+  border: 0.125rem solid $borda;
+  border-radius: v.$radius-pill;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}

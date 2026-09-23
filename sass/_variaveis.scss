@@ -1,0 +1,33 @@
+@use "sass:math";
+
+$color-tinta: #14133a;         
+$color-indigo: #3b37e8;        
+$color-indigo-escuro: #2622b8;
+$color-sol: #ffc93c;            
+$color-fundo: #f6f7fc;          
+$color-branco: #ffffff;
+$color-cinza: #5a5a78;          
+$color-linha: #dcdcf0;          
+$color-erro: #c62828;
+$color-sucesso: #1b7a3d;
+
+$font-titulo: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+$font-texto: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+$spacing-base: 1.25rem;
+$spacing-xs: math.div($spacing-base, 3);  
+$spacing-sm: math.div($spacing-base, 2);  
+$spacing-md: $spacing-base;                
+$spacing-lg: $spacing-base * 2;            
+$spacing-xl: $spacing-base * 2.4;         
+$spacing-secao: clamp(3.5rem, 8vw, 7rem);  
+
+$radius-base: 0.75rem;
+$radius-pill: 999px;
+$altura-cabecalho: 4.5rem;
+
+
+$bp-celular: 30em;   
+$bp-tablet: 48em;   
+$bp-desktop: 64em;   
+$bp-desktop-lg: 90em; 

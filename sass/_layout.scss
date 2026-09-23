@@ -1,0 +1,339 @@
+@use "variaveis" as v;
+@use "mixins" as m;
+
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: v.$color-branco;
+  border-bottom: 0.0625rem solid v.$color-linha;
+
+  &__container {
+    width: min(100% - #{v.$spacing-lg}, 72rem);
+    min-height: v.$altura-cabecalho;
+    margin-inline: auto;
+    @include m.flex(row, center, space-between);
+  }
+}
+
+.hero {
+  min-height: calc(100vh - #{v.$altura-cabecalho});
+  @include m.flex(row, center, flex-start);
+  padding-block: v.$spacing-xl;
+  color: v.$color-branco;
+  background: v.$color-tinta;
+  background-image:
+    radial-gradient(circle at 85% 15%, rgba(59, 55, 232, 0.55), transparent 45%),
+    radial-gradient(circle at 5% 95%, rgba(255, 201, 60, 0.18), transparent 40%);
+
+  &__container {
+    width: min(100% - #{v.$spacing-lg}, 72rem);
+    margin-inline: auto;
+    display: grid;
+    gap: v.$spacing-lg;
+    align-items: center;
+
+    @include m.breakpoint(v.$bp-desktop) {
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: v.$spacing-lg * 1.6;
+    }
+  }
+
+  &__eyebrow {
+    display: inline-block;
+    margin-bottom: v.$spacing-base;
+    padding: 0.35em 0.9em;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: v.$color-sol;
+    border: 0.0625rem solid rgba(255, 201, 60, 0.5);
+    border-radius: v.$radius-pill;
+  }
+
+  &__texto {
+    max-width: 34rem;
+    margin-top: v.$spacing-sm * 2.4; // ~1.5rem
+    font-size: 1.15rem;
+    color: #d4d4ee;
+  }
+
+  &__acoes {
+    @include m.flex(row, center, flex-start, v.$spacing-sm * 1.36); // ~0.85rem
+    flex-wrap: wrap;
+    margin-top: v.$spacing-lg;
+
+    @media (max-width: v.$bp-celular) {
+      .botao {
+        flex: 1 1 100%;
+      }
+    }
+  }
+
+  &__figura {
+    position: relative;
+  }
+
+  &__imagem {
+    width: 100%;
+    aspect-ratio: 8 / 7;
+    object-fit: cover;
+    border-radius: 1.5rem 1.5rem 6rem 1.5rem;
+  }
+
+  &__selo {
+    position: absolute;
+    left: -0.5rem;
+    bottom: v.$spacing-base;
+    padding: 0.9rem v.$spacing-base;
+    font-size: 0.95rem;
+    line-height: 1.3;
+    color: v.$color-tinta;
+    background: v.$color-sol;
+    border-radius: v.$radius-base;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.25);
+
+    @media (max-width: v.$bp-celular) {
+      left: 0.5rem;
+    }
+    @include m.breakpoint(v.$bp-desktop) {
+      left: -2rem;
+    }
+  }
+
+  &__selo-numero {
+    display: block;
+    font-family: v.$font-titulo;
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+}
+
+.sobre {
+  background: v.$color-branco;
+
+  &__container {
+    display: grid;
+    gap: v.$spacing-lg;
+    align-items: center;
+
+    @include m.breakpoint(v.$bp-desktop) {
+      grid-template-columns: 1fr 1.1fr;
+      gap: v.$spacing-lg * 1.8;
+    }
+  }
+
+  &__imagem {
+    width: 100%;
+    border-radius: v.$radius-base;
+    aspect-ratio: 35 / 26;
+    object-fit: cover;
+  }
+
+  &__titulo {
+    margin-bottom: v.$spacing-base;
+  }
+
+  &__texto {
+    color: v.$color-cinza;
+  }
+}
+
+.valores {
+  display: grid;
+  gap: v.$spacing-md;
+  margin-top: v.$spacing-lg;
+
+  &__item {
+    padding-left: 1.1rem;
+    border-left: 0.25rem solid v.$color-sol;
+  }
+
+  &__texto {
+    font-size: 0.98rem;
+    color: v.$color-cinza;
+  }
+
+  @include m.breakpoint(v.$bp-tablet) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.servicos {
+  &__lista {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: v.$spacing-md;
+
+    @include m.breakpoint(v.$bp-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include m.breakpoint(v.$bp-desktop) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: v.$spacing-md * 1.4;
+    }
+  }
+}
+
+.servico {
+  padding: v.$spacing-md * 1.4;
+  background: v.$color-branco;
+  border: 0.0625rem solid v.$color-linha;
+  border-top: 0.3rem solid v.$color-indigo;
+  border-radius: v.$radius-base;
+
+  &--indigo {
+    border-top-color: v.$color-indigo;
+  }
+  &--sol {
+    border-top-color: v.$color-sol;
+  }
+  &--tinta {
+    border-top-color: v.$color-tinta;
+  }
+
+  &__titulo {
+    margin-bottom: 0.6rem;
+  }
+
+  &__texto {
+    font-size: 0.98rem;
+    color: v.$color-cinza;
+  }
+}
+
+.depoimentos {
+  background: v.$color-tinta;
+  color: v.$color-branco;
+
+  &__lista {
+    @include m.flex(column, stretch, flex-start, v.$spacing-md);
+
+    @include m.breakpoint(v.$bp-tablet) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    @include m.breakpoint(v.$bp-desktop) {
+      flex-wrap: nowrap;
+    }
+  }
+}
+
+.depoimento {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: v.$spacing-lg * 0.7; // ~1.75rem
+  padding: v.$spacing-md * 1.4;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: v.$radius-base;
+
+  @include m.breakpoint(v.$bp-tablet) {
+    flex-basis: 45%;
+  }
+  @include m.breakpoint(v.$bp-desktop) {
+    flex-basis: 0;
+  }
+
+  &__citacao {
+    font-family: v.$font-titulo;
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+
+  &__autor {
+    @include m.flex(row, center, flex-start, v.$spacing-sm * 1.44); // ~0.9rem
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #cfcfe8;
+  }
+
+  &__nome {
+    color: v.$color-branco;
+  }
+
+  &__cargo {
+    color: #cfcfe8;
+  }
+}
+
+.contato {
+  &__container {
+    display: grid;
+    gap: v.$spacing-lg;
+    align-items: start;
+
+    @include m.breakpoint(v.$bp-desktop) {
+      grid-template-columns: 1fr 1.2fr;
+      gap: v.$spacing-lg * 1.8;
+    }
+  }
+
+  &__texto {
+    margin-top: 0.75rem;
+    color: v.$color-cinza;
+  }
+
+  &__dados {
+    display: grid;
+    gap: v.$spacing-md;
+    margin-top: v.$spacing-lg;
+    font-style: normal;
+  }
+
+  &__link {
+    font-weight: 500;
+  }
+}
+
+.formulario {
+  display: grid;
+  gap: v.$spacing-md;
+  padding: clamp(1.25rem, 4vw, 2.25rem);
+  background: v.$color-branco;
+  border: 0.0625rem solid v.$color-linha;
+  border-radius: 1.25rem;
+
+  &__botao {
+    justify-self: start;
+  }
+
+  &__status {
+    min-height: 1.5em;
+    font-weight: 500;
+    color: v.$color-sucesso;
+
+    &--erro {
+      color: v.$color-erro;
+    }
+  }
+}
+
+.rodape {
+  padding-block: v.$spacing-md * 1.4;
+  font-size: 0.9rem;
+  color: #cfcfe8;
+  background: v.$color-tinta;
+  border-top: 0.0625rem solid rgba(255, 255, 255, 0.12);
+
+  &__container {
+    @include m.flex(row, center, space-between, 0.75rem);
+    flex-wrap: wrap;
+  }
+
+  &__link {
+    color: v.$color-sol;
+  }
+}
+
+@media (max-width: v.$bp-celular) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+@include m.breakpoint(v.$bp-desktop-lg) {
+  html {
+    font-size: 112.5%; 
+  }
+}

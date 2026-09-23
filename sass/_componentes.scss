@@ -1,0 +1,230 @@
+@use "variaveis" as v;
+@use "mixins" as m;
+
+// ---- .botao ----
+.botao--primario {
+  @include m.botao(v.$color-indigo);
+
+  &:hover {
+    background: v.$color-indigo-escuro;
+  }
+}
+
+.botao--secundario {
+  @include m.botao(transparent, v.$color-branco, currentColor);
+
+  &:hover {
+    background: v.$color-branco;
+    color: v.$color-tinta;
+  }
+}
+
+.campo {
+  @include m.flex(column, stretch, flex-start, v.$spacing-xs);
+
+  &__rotulo {
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font: inherit;
+    color: v.$color-tinta;
+    background: v.$color-fundo;
+    border: 0.125rem solid v.$color-linha;
+    border-radius: v.$radius-base;
+
+    &:focus {
+      border-color: v.$color-indigo;
+      outline: none;
+      background: v.$color-branco;
+    }
+
+    &:user-invalid {
+      border-color: v.$color-erro;
+    }
+
+    &--textarea {
+      resize: vertical;
+    }
+  }
+}
+
+.avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  font: 700 1rem v.$font-titulo;
+  color: v.$color-tinta;
+  background: v.$color-sol;
+  border-radius: 50%;
+}
+
+.logo {
+  @include m.flex(row, center, flex-start, v.$spacing-xs * 1.4); // ~0.6rem
+  text-decoration: none;
+  color: v.$color-tinta;
+  font-family: v.$font-titulo;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+
+  &__icone {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  &__texto-destaque {
+    font-weight: 800;
+    color: v.$color-indigo;
+  }
+}
+
+.alternador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  background: none;
+  border: 0.125rem solid v.$color-linha;
+  border-radius: v.$radius-base;
+  cursor: pointer;
+
+  &__barra {
+    position: relative;
+    display: block;
+    width: 1.25rem;
+    height: 0.125rem;
+    background: v.$color-tinta;
+    border-radius: 1px;
+    transition: transform 0.25s, background-color 0.25s;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      display: block;
+      width: 1.25rem;
+      height: 0.125rem;
+      background: v.$color-tinta;
+      border-radius: 1px;
+      transition: transform 0.25s, background-color 0.25s;
+    }
+    &::before {
+      top: -0.4rem;
+    }
+    &::after {
+      top: 0.4rem;
+    }
+  }
+
+  &--ativo &__barra {
+    background: transparent;
+
+    &::before {
+      transform: translateY(0.4rem) rotate(45deg);
+    }
+    &::after {
+      transform: translateY(-0.4rem) rotate(-45deg);
+    }
+  }
+
+  @include m.breakpoint(v.$bp-desktop) {
+    display: none;
+  }
+}
+
+.menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: v.$color-branco;
+  border-bottom: 0.0625rem solid v.$color-linha;
+  display: none;
+
+  &--aberto {
+    display: block;
+  }
+
+  &__lista {
+    @include m.flex(column, stretch, flex-start, 0);
+    padding: 0.5rem 1.25rem 1.25rem;
+  }
+
+  &__link {
+    display: block;
+    padding: 0.85rem 0;
+    color: v.$color-tinta;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 0.0625rem solid v.$color-linha;
+
+    &:hover {
+      color: v.$color-indigo;
+    }
+
+    &--destaque {
+      margin-top: 1rem;
+      padding: 0.8rem 1.25rem;
+      text-align: center;
+      color: v.$color-tinta;
+      background: v.$color-sol;
+      border: 0;
+      border-radius: v.$radius-pill;
+      font-weight: 700;
+
+      &:hover {
+        color: v.$color-tinta;
+        background: #ffd766;
+      }
+    }
+  }
+
+  @include m.breakpoint(v.$bp-desktop) {
+    position: static;
+    display: block;
+    width: auto;
+    background: none;
+    border: 0;
+
+    &__lista {
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+      padding: 0;
+    }
+
+    &__link {
+      padding: 0.4rem 0;
+      border-bottom: 0;
+
+      &--destaque {
+        margin-top: 0;
+        padding: 0.6rem 1.25rem;
+      }
+    }
+  }
+}
+
+.secao-cabecalho {
+  max-width: 40rem;
+  margin-bottom: v.$spacing-lg;
+  color: v.$color-tinta;
+
+  &__texto {
+    margin-top: 0.75rem;
+    color: currentColor;
+    opacity: 0.72;
+  }
+
+  &--claro {
+    color: v.$color-branco;
+  }
+}

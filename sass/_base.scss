@@ -1,0 +1,109 @@
+@use "variaveis" as v;
+@use "mixins" as m;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;               
+  scroll-behavior: smooth;
+  scroll-padding-top: v.$altura-cabecalho;
+}
+
+body {
+  font-family: v.$font-texto;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: v.$color-tinta;
+  background: v.$color-fundo;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: v.$color-indigo;
+}
+
+:focus-visible {
+  outline: 0.1875rem solid v.$color-sol;
+  outline-offset: 0.2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: v.$font-titulo;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 6vw + 0.5rem, 4.5rem);
+  font-weight: 800;
+}
+h2 {
+  font-size: clamp(1.75rem, 3.5vw + 0.5rem, 2.75rem);
+  font-weight: 700;
+}
+h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.container {
+  width: min(100% - #{v.$spacing-lg}, 72rem); // v.$spacing-lg = 2.5rem de margem lateral
+  margin-inline: auto;
+}
+
+.secao {
+  @include m.espacamento-secao;
+}
+
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.pular-conteudo {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 200;
+  padding: 0.5rem 1rem;
+  background: v.$color-sol;
+  color: v.$color-tinta;
+  font-weight: 700;
+  border-radius: v.$radius-base;
+
+  &:focus {
+    top: 1rem;
+  }
+}
