@@ -1,0 +1,19 @@
+{
+  "name": "site-agencia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site da Agência Criativa Web, otimizado para performance",
+  "scripts": {
+    "imagens": "node scripts/imagens.js",
+    "css": "sass sass/estilos.scss css/estilos.min.css --style=compressed --no-source-map",
+    "js": "terser src/js/script.js --compress --mangle -o js/script.min.js",
+    "html": "html-minifier-terser --collapse-whitespace --remove-comments --minify-css true -o index.html src/index.html",
+    "build": "npm run css && npm run js && npm run html"
+  },
+  "devDependencies": {
+    "html-minifier-terser": "^7.2.0",
+    "sass": "^1.77.0",
+    "sharp": "^0.33.0",
+    "terser": "^5.31.0"
+  }
+}

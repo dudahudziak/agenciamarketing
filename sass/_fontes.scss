@@ -1,0 +1,20 @@
+// Fontes hospedadas no próprio projeto (subconjunto latin, formato woff2).
+// font-display: swap mostra o texto na hora com a fonte reserva e troca quando a fonte chega.
+
+@mixin fonte($familia, $arquivo, $peso) {
+  @font-face {
+    font-family: $familia;
+    font-style: normal;
+    font-weight: $peso;
+    font-display: swap;
+    src: url("../fontes/#{$arquivo}.woff2") format("woff2");
+  }
+}
+
+@include fonte("Bricolage Grotesque", "bricolage-grotesque-v9-latin-500", 500);
+@include fonte("Bricolage Grotesque", "bricolage-grotesque-v9-latin-700", 700);
+@include fonte("Bricolage Grotesque", "bricolage-grotesque-v9-latin-800", 800);
+
+@include fonte("DM Sans", "dm-sans-v17-latin-regular", 400);
+@include fonte("DM Sans", "dm-sans-v17-latin-500", 500);
+@include fonte("DM Sans", "dm-sans-v17-latin-700", 700);
